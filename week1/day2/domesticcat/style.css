@@ -1,0 +1,42 @@
+body {
+  background-color: lightblue;
+}
+.inRed{
+    border: 2px solid Tomato;
+    color: tomato;
+    text-align: center;
+    font-weight: 600;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.yellow {
+    background: yellow;
+}
+link {
+    color: blue;
+}
+link :visited {
+    color: blueviolet;
+}
+img {
+    border: 7px solid tomato;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img:hover {
+    transform: scaleX(-1);
+  }
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  td {
+      height: 70px;
+  }
+  .Center {
+      text-align: center;
+  }
