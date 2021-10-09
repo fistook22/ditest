@@ -3,10 +3,45 @@
 	height: 400px;
 }
 
+.container{
+	width: 612px;
+	height:612px;
+	background-image: url('https://media.gettyimages.com/vectors/barrel-flat-design-fantasy-icon-vector-id965307658?s=612x612');
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.icon{
+	width: 200px;
+    /*position: absolute;*/
+	left: 150px;
+}
+
+.buttons{
+	position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 450px;
+}
+
+.login{
+	left: 0px;
+}
+
+.signUp{
+	left: 0px;
+}
+
 footer{
+	width: 100%;
 	background: lightblue;
 }
 
 span{
-	align-items: center;
+	text-align: center;
+
+}
+
+button{
+	width: 250px;
 }
