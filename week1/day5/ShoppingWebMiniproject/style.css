@@ -34,11 +34,11 @@
 
 footer{
 	width: 100%;
-	background: lightblue;
+	background: rgba(32, 146, 184, 0.63);
 }
 
 span{
-	text-align: center;
+	align-items: center;
 
 }
 

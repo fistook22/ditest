@@ -1,0 +1,19 @@
+html { 
+    background: url(./assets/pexels-monstera-7411934.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  header {
+      align-self: center;
+  }
+  .container{
+      display: grid;
+      justify-content: space-evenly;
+  }
+
+  .item-a {
+      grid-column-start: 1;
+  }

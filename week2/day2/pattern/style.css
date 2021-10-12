@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.right {
+    flex-direction: column;
+    align-self: flex-end;
+    justify-content: space-evenly;
+}
+
+.container-b {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+div {
+    border-style: solid;
+    background-color: yellow;
+    width: 150px;
+    height: 150px;
+}

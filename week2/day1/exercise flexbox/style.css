@@ -1,0 +1,13 @@
+section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div{
+    width: 120vw;
+    height:120vh;
+    color: rgb(71, 218, 255) solid;
+    align-content: center;
+    align-items: center ;
+}
