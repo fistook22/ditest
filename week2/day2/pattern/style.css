@@ -1,10 +1,14 @@
+main {
+    display: flex;
+}
+
 .container {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
 }
 
-.right {
+.container-a {
     flex-direction: column;
     align-self: flex-end;
     justify-content: space-evenly;
