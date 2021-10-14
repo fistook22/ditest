@@ -1,0 +1,11 @@
+
+.nav-pic {
+	background-image: url(./istockphoto.jpg);
+	width: 100vw;
+	height: 50vh;
+	background-repeat: no-repeat;
+}
+
+.navbar.transparent.navbar-inverse .navbar-inner {
+   background: rgba(0,0,0,0.4);
+}
