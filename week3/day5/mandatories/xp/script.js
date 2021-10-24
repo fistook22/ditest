@@ -34,7 +34,9 @@
 // //ex2
 // let people = ["Greg", "Mary", "Devon", "James"];
 // people.shift();
+// console.log(people)
 // people.splice(2, 1, "Jason", "Shai");
+// console.log(people);
 // for (let i = 0; i < people.length; i++) {
 //     console.log(people[i]);
 //     if (i === 2) { break; }
@@ -42,7 +44,7 @@
 // let myPeople = people.slice(1, -1);
 // console.log(myPeople);
 // console.log(people.indexOf("Mary"));
-// console.log(people.indexOf("Foo"));
+// console.log(people.indexOf("dan"));
 // let last = people[people.length - 1];
 // console.log(last);
 
@@ -58,10 +60,11 @@
 
 //ex3
 // let num = prompt("please submit a number");
-// while (num < 10) {
-//     num++;
-// }   //  ??? ask dan
-
+// let num = undefined;
+// do {
+//     num = prompt("Please enter a number");
+// }
+// while (num < 10);
 
 //ex4
 
@@ -87,5 +90,5 @@ console.log(building.nameOfTenants[1], building.numberOfRoomsAndRent.dan[0]);
 let sum = building.numberOfRoomsAndRent.sarah[1] +
     building.numberOfRoomsAndRent.david[1];
 if (sum > building.numberOfRoomsAndRent.dan[1]) {
-    let (building.numberOfRoomsAndRent.dan) = [4, 1200]
+    building.numberOfRoomsAndRent.dan = [4, 1200]
 }
