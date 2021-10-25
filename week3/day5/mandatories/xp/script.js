@@ -68,27 +68,51 @@
 
 //ex4
 
-let building = {
-    numberOfFloors: 4,
-    numberOfAptByFloor: {
-        firstFloor: 3,
-        secondFloor: 4,
-        thirdFloor: 9,
-        fourthFloor: 2,
-    },
-    nameOfTenants: ["Sarah", "Dan", "David"],
-    numberOfRoomsAndRent: {
-        sarah: [3, 990],
-        dan: [4, 1000],
-        david: [1, 500],
-    },
-}
-console.log(building.numberOfFloors);
-console.log(building.numberOfAptByFloor.firstFloor +
-    building.numberOfAptByFloor.thirdFloor);
-console.log(building.nameOfTenants[1], building.numberOfRoomsAndRent.dan[0]);
-let sum = building.numberOfRoomsAndRent.sarah[1] +
-    building.numberOfRoomsAndRent.david[1];
-if (sum > building.numberOfRoomsAndRent.dan[1]) {
-    building.numberOfRoomsAndRent.dan = [4, 1200]
+// let building = {
+//     numberOfFloors: 4,
+//     numberOfAptByFloor: {
+//         firstFloor: 3,
+//         secondFloor: 4,
+//         thirdFloor: 9,
+//         fourthFloor: 2,
+//     },
+//     nameOfTenants: ["Sarah", "Dan", "David"],
+//     numberOfRoomsAndRent: {
+//         sarah: [3, 990],
+//         dan: [4, 1000],
+//         david: [1, 500],
+//     },
+// }
+// console.log(building.numberOfFloors);
+// console.log(building.numberOfAptByFloor.firstFloor +
+//     building.numberOfAptByFloor.thirdFloor);
+// console.log(building.nameOfTenants[1], building.numberOfRoomsAndRent.dan[0]);
+// let sum = building.numberOfRoomsAndRent.sarah[1] +
+//     building.numberOfRoomsAndRent.david[1];
+// if (sum > building.numberOfRoomsAndRent.dan[1]) {
+//     building.numberOfRoomsAndRent.dan = [4, 1200]
+// }
+
+
+//ex5
+
+// let family = {
+//     dad: "gad",
+//     mom: "dalit",
+//     sis: "yuval",
+//     bro: "shai"
+// }
+// for (let key of Object.keys(family)) {
+//     console.log(key + " -> " + family[key])
+// }
+
+//ex6
+
+let details = {
+    my: 'name',
+    is: 'Rudolf',
+    the: 'raindeer'
+  }
+  for (let [key, value] of Object.entries(details)) {
+    console.log(key, value);
 }
