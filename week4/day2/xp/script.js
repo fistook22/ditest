@@ -128,6 +128,6 @@ function rentalCarCost(dayRent) {
     } while (lastVal == false);
     console.log(lastVal)
     totalAmount += lastVal
-console.log(totalAmount)
-return totalAmount
+    console.log(totalAmount)
+    return totalAmount
 })
