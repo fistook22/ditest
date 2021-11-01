@@ -1,0 +1,68 @@
+
+<Doctype 
+<html>
+<body>
+    <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+    </table>
+    <input type="button" onclick="insertRow()" value="Insert row">
+    <script>
+        function insertRow(){
+            let tr = document.createElement('tr')
+            let rowNumber = document.getElementsByTagName("tr").length
+            let currentRowNumber = rowNumber+1
+            for (let index = 1; index < 3; index++) {
+                let currentTd = document.createElement("td")
+                let currentTextNode = document.createTextNode(`Row${currentRowNumber} cell${index}`)
+                currentTd.appendChild(currentTextNode)
+                tr.appendChild(currentTd)
+            }
+            let currentTable = document.querySelector("table")
+            currentTable.appendChild(tr)
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+8:17
+<html>
+<body>
+    <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+    </table>
+    <input type="button" onclick="insertRow()" value="Insert row">
+    <script>
+        function insertRow(){
+            let tr = document.createElement('tr')
+            let rowNumber = document.getElementsByTagName("tr").length
+            let currentRowNumber = rowNumber+1
+            for (let index = 1; index < 3; index++) {
+                let currentTd = document.createElement("td")
+                let currentTextNode = document.createTextNode(`Row${currentRowNumber} cell${index}`)
+                currentTd.appendChild(currentTextNode)
+                tr.appendChild(currentTd)
+            }
+            let currentTable = document.querySelector("table")
+            currentTable.appendChild(tr)
+        }
+    </script>
+</body>
+</html>

@@ -1,7 +1,17 @@
 // ex 1
-elememt = document.getElementById("navBar").setAttribute("navBar", "socialNetworkNavigation");
-console.log(document.getElementById("navBar"));
+let elememt = document.getElementById("navBar")
+elememt.setAttribute("id", "socialNetworkNavigation");
 
+
+let newLi = document.createElement("li");
+console.log(newLi);
+let textNode = document.createTextNode("Logout");
+newLi.appendChild(textNode);
+let ul = document.getElementsByTagName("ul")[0];
+ul.appendChild(newLi);
+let firstLi = ul.firstElementChild;
+let lastLi = ul.lastElementChild;
+console.log(firstLi.textContent, lastLi.textContent);
 
 //ex 1.b
 // let myList = document.createElement("li");
