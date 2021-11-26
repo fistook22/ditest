@@ -103,3 +103,87 @@ dna = DNA(chromosome)
 organism = Organism(dna)
 organism.flip_and_show()
 
+# from typing import List
+# import random
+
+
+# class Gene:
+# 	def __init__(self, value: int):
+# 		self.value = value
+
+# 	def flip(self):
+# 		self.value = random.randint(0, 1)
+
+
+# class Chromosome:
+# 	def __init__(self, genes: List[Gene]):
+# 		if len(genes) != 10:
+# 			raise Exception("you must provide 10 genes")
+
+# 		self.genes = genes
+
+# 	def flip(self) -> None:
+# 		for i in range(len(self.genes)):
+# 			self.genes[i].flip()
+
+# 	def is_ones(self) -> bool:
+# 		for gene in self.genes:
+# 			if gene.value == 0:
+# 				return False
+
+# 		return True
+
+# 	def show(self) -> None:
+# 		for gene in self.genes:
+# 			print(gene, end='')
+
+
+# class DNA:
+# 	def __init__(self, chromosomes: List[Chromosome]):
+# 		if len(chromosomes) != 10:
+# 			raise Exception("you must provide 10 chromosomes")
+
+# 		self.chromosomes = chromosomes
+
+# 	def flip(self) -> None:
+# 		for i in range(len(self.chromosomes)):
+# 			self.chromosomes[i].flip()
+
+# 	def is_ones(self) -> bool:
+# 		for chromosome in self.chromosomes:
+# 			# if chromosome.is_ones() == False:
+# 			if not chromosome.is_ones():
+# 				return False
+
+# 		return True
+
+# 	def show(self) -> None:
+# 		for chromosome in self.chromosomes:
+# 			chromosome.show()
+
+# 		print('')
+
+# class Organism:
+# 	def __init__(self, dna: DNA):
+# 		self.dna = dna
+
+# 	def flip_and_show(self) -> None:
+# 		while not self.dna.is_ones():
+# 			self.dan.show()
+# 			self.dna.flip()
+
+# 		self.dna.show()
+
+
+# genes1 = [Gene(0),Gene(0),Gene(0),Gene(0),Gene(0),Gene(0),Gene(0),Gene(0),Gene(0),Gene(0)]
+# genes2 = [Gene(0),Gene(0),Gene(1),Gene(0),Gene(0),Gene(1),Gene(0),Gene(0),Gene(0),Gene(0)]
+
+# chromosome1 = Chromosome(genes1)
+# chromosome2 = Chromosome(genes2)
+
+# chromosomes = [chromosome1, chromosome2, chromosome2 ,chromosome2,chromosome1,chromosome1,chromosome1,chromosome1,chromosome1,chromosome2]
+
+# dna = DNA(chromosomes)
+
+# organism = Organism(dna)
+# organism.flip_and_show()
