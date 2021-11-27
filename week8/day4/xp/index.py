@@ -7,7 +7,7 @@
 #         for animal in self.animals:
 #             print(animal.walk())
 
-# class Cat():
+# class Cat(Pets):
 #     is_lazy = True
 
 #     def __init__(self, name, age):
@@ -15,7 +15,7 @@
 #         self.age = age
 
 #     def walk(self):
-#         return f'{self.name} is just walking around'
+#         return print(f'{self.name} is just walking around')
 
 # class Bengal(Cat):
 #     def sing(self, sounds):
@@ -29,7 +29,14 @@
 #     def sing(self, sounds):
 #         return f'{sounds}'
 
-# class MyCats()
+# cat1 = Bengal('benny', 8)
+# cat2 = Chartreux('cha', 6)
+# cat3 = Tiger('tig', 5)
+# my_cats = [cat1, cat2, cat3]
+# my_pets = Pets(cat3)
+# cat1.walk()
+# cat2.walk()
+# cat3.walk()
 
 #ex2
 class Dog:
@@ -38,17 +45,31 @@ class Dog:
         self.age = age
         self.weight = weight
 
-    def bark(self, sound):
-        self.sound = sound
-        print(f'{self.name}{self.sound}')
+    def bark(self):
+        print(f'{self.name} is barking!')
     
-    def run_speed(self, run_speed):
-        self.run_speed = run_speed
-        return f'{self.weight} / {self.age} * 10'
+    def run_speed(self):
+        print(self.weight / self.age * 10)
 
-    def fight(self, fight):
-        self.fight = fight
+    def power(self):
+        print(self.weight * self.run_speed())
         
+
+    def fight(self, other_dog):
+        self.other_dog = other_dog
+
+        if other_dog.power() > self.power():
+            print(f'{other_dog} has won the fight!')
+        else:
+            print(f'{self} has won the fight!')
+
+dog1 = Dog('dani', 8, 21)
+dog2 = Dog('dogo', 6, 26)
+dog3 = Dog('fogo', 4, 27)
+dog1.run_speed()
+dog1.fight(dog2)
         
+
+     
         
         
