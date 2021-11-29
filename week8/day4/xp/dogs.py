@@ -7,13 +7,14 @@ class PetDog(index.Dog):
         self.trained = trained
 
     def train(self):
-        print(self.bark()) and self.trained = True
+        print(self.bark())
+        self.trained = True
 
     def play(self, *args):
         print(f'{args} all play together')
 
     def do_a_trick(self):
-        self.trick_list = [f'{self} does a barrel roll', f'{self} stands on his back legs', f'{self} shakes your hand', f'{self} playes dead']
+        self.trick_list = [f'{self.name} does a barrel roll', f'{self.name} stands on his back legs', f'{self.name} shakes your hand', f'{self} playes dead']
         # self.roll = f'{self} does a barrel roll'
         # self.stand = f'{self} stands on his back legs'
         # self.shake = f'{self} shakes your hand'

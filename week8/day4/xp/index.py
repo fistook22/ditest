@@ -49,19 +49,14 @@ class Dog:
         print(f'{self.name} is barking!')
     
     def run_speed(self):
-        print(self.weight / self.age * 10)
+        return self.weight / self.age * 10
 
-    def power(self):
-        print(self.weight * self.run_speed())
         
-
-    def fight(self, other_dog):
-        self.other_dog = other_dog
-
-        if other_dog.power() > self.power():
-            print(f'{other_dog} has won the fight!')
+    def fight(self,other_dog):
+        if (self.weight*self.run_speed()) > (other_dog.weight *other_dog.run_speed()):
+            print(f"{self.name} is the champion and he beet {other_dog.name}")
         else:
-            print(f'{self} has won the fight!')
+            print(f"{other_dog.name} is the champion and he beet {self.name}")
 
 dog1 = Dog('dani', 8, 21)
 dog2 = Dog('dogo', 6, 26)
