@@ -1,0 +1,12 @@
+[
+  {
+    "firstName": "Alice",
+    "age": 6,
+    "favourite_color": "red"
+  },
+  {
+    "firstName": "Bob",
+    "age": 8,
+    "favourite_color": "red"
+  }
+]
