@@ -6,7 +6,7 @@ app = Flask(__name__)
 # default-page
 @app.route('/')
 def home():
-    return "<a href={{ url_for('about_func') }}> About Shai </a>"
+    return "<a href={{ url_for('about') }}> About Shai </a>"
 
 
 # about-page
