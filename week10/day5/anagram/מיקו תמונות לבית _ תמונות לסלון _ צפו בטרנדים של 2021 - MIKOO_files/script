@@ -1,0 +1,6 @@
+var d =document.getElementsByClassName('artplacer-button');
+for (var i = 0; i < d.length; i++) {
+  d[i].style.display = 'inline-block !important';
+  d[i].style.marginRight  = '3px'; 
+}
+document.write('<script src="//widget.artplacer.com/js/script.js"></script>');
