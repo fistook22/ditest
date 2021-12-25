@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson1</title>
+</head>
+<body>
+<p>#A Simple, Handy Guide To Flask
+Flask is a micro web framework in Python that also happens to be a boon for all crazy website developers. With Flask, you don’t need to load all libraries or worry about the server-side – it all gets done so easily.</p>
+<p>Let’s get our hands dirty by making a very basic Flask website. But before we start, we should familiarize ourselves with how different virtual environments work in different frameworks.</p>
+<p><img src="flask-dev.png" alt="pic"></p>
+<p>A virtual environment in Python is simply a separate space or stack where you only load libraries that are required in your specific project, not any unnecessary ones.</p>
+<p>Now, let’s get started with our very easy and basic website using Flask. I use the Pycharm editor because it’s intelligent enough to identify missing dependencies in a project.</p>
+<p>###You can download Pycharm <a href="https://www.jetbrains.com/pycharm/">here</a>.    </p>
+<p>##Step 1: Install Flask, Open The Terminal In Pycharm, And Write:
+<code>pip install flask</code></p>
+<p>##Step 2: Make The Main.Py File, Go To The File Menu In The Menu Bar Of Pycharm, And Make A New Project.</p>
+<p>###Learn how to create/ set an environment in Pycharm first.</p>
+<p>Now, make a main.py file in your new project and write the following code:</p>
+<p>```from flask import Flask
+app = Flask(<strong>name</strong>)</p>
+<h1 id="default-page">default-page</h1>
+<p>@app.route(“/”)
+def home():
+   return “hello world”</p>
+<p>if <strong>name</strong> == “<strong>main</strong>”:
+   app.run()</p>
+<pre><code>
+<span class="hljs-comment">##Step 3: Run Your File Either In The Terminal As:</span>
+python main.py
+Or simply right click <span class="hljs-keyword">and</span> run main.
+
+A Localhost address, like: http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">5000</span>/ would appear <span class="hljs-keyword">in</span> the terminal. Click <span class="hljs-literal">on</span> it <span class="hljs-keyword">and</span> your default browser gets opened.
+
+You have now made your first simple <span class="hljs-keyword">and</span> basic website. But, it <span class="hljs-keyword">is</span> just the basic one that you have completed.
+
+Let’s add some HTML pages <span class="hljs-literal">on</span> our website. You must have seen that the web addresses are <span class="hljs-keyword">in</span> the form, https:<span class="hljs-regexp">//</span>abc.com<span class="hljs-regexp">/user1/</span>. The / you add <span class="hljs-keyword">is</span> to render to specific web pages, <span class="hljs-keyword">and</span> we are going to move from one page to another using /, i.e., render_template.
+
+
+
+<span class="hljs-comment">##Step 4: Make A Templates Folder In Your Project, Then Make An About.Html File In It.</span>
+
+
+<span class="hljs-comment">##Step 5: Write The Following Code In *About.Html* File.</span>
+`<span class="javascript"></span>``<span class="javascript">&lt;!DOCTYPE html&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">”en”</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">”UTF-8</span>"&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>ABOUT<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">centre</span>&gt;</span> Hey,this is my first site.<span class="hljs-tag">&lt;/<span class="hljs-name">centre</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span></span>
+</code></pre><p>##Step 6: Add Another Function In <em>Main.Py</em> File
+```from flask import Flask,render_template
+app = Flask(<strong>name</strong>)</p>
+<h1 id="default-page">default-page</h1>
+<p>@app.route(“/”)
+def home():
+   return “hello world”</p>
+<h1 id="about-page">about-page</h1>
+<p>@app.route(“/about”)
+def about():
+    return render_template(“About.html”)</p>
+<p>if <strong>name</strong> == “<strong>main</strong>”:
+   app.run()
+   ```
+Now, when you run the main file, in the localhost address add <em>/about</em>. You should then be able to see your About page.</p>
+<p>There are many more things that you can add onto your website.</p>
+<p>You can read more about Flask <a href="https://flask.palletsprojects.com/en/1.1.x/">here</a>.</p>
+
+</body>
+</html>
