@@ -1,16 +1,16 @@
-import flask
+from flask import Flask, render_template
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return flask.render_template('index.html')
+    return render_template('index.html')
 
 
 @app.route('/blank/<color>')
 def blank(color):
-    return flask.render_template('blank.html', color=color)
+    return render_template('blank.html', color=color)
 
 
 app.run()
