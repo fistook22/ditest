@@ -1,3 +1,4 @@
+import flask
 from flask import Flask, request, url_for, redirect, render_template
 
 app = Flask(__name__)
@@ -10,12 +11,12 @@ def index():
 
 @app.route("/")
 def lesson():
-    return render_template("less.html")
+    return flask.render_template("less.html")
 
 
 @app.route("/")
 def exercise():
-    return render_template("ex.html")
+    return flask.render_template("ex.html")
 
 
 if __name__ == "__main__":

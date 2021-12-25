@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+</head>
+<body>
+    {% if 8 <= d.hour <= 13 %}
+        <p>Good morning</p>
+    {% elif 13 <= d.hour <= 17 %}
+        <p>Good afternoon</p>
+    {% elif 17 <= d.hour <= 21 %}
+        <p>Good evening</p>
+    {% else %}
+        <p>Good evening</p>
+    {% endif %}
+</body>
+</html>
