@@ -1,32 +1,22 @@
-function feedArray(numberOfWord) {
-    let arrayOfWords = []
-    for (let index = 0; index < numberOfWord; index++) {
-        arrayOfWords.push(prompt("whats your next word?"))
+var arr = []; // define our array
 
-    }
-    return arrayOfWords
+for (var i = 0; i < 3; i++) { // loop 3 times
+    arr.push(prompt('Enter a word ' + (i + 1))); // push the value into the array
 }
 
-function createTheFrame(array) {
-    let toDisplay = ''
-    let longest = array.reduce((a, b) => {
-        return a.length > b.length ? a.length : b.length;
-    }
-    );
-    while (toDisplay.length < longest + 4) toDisplay += "*"
-    toDisplay += '\n';
-    for (let index = 0; index < array.length, index++;) {
-        let toAdd = ""
-        toAdd += '* '
-        const element = array[index];
-        toAdd += "${element}"
-        while (toAdd.length < longest + 3) toAdd += ' '
-        toAdd += '*\n'
-        toDisplay += toAdd
-    }
-    let toAdd = ''
-    while (toAdd.length < longest + 4) toAdd += "*"
-    toDisplay += toAdd
-    console.log(toDisplay)
+str = arr.join("")
+
+function frame(str) {
+    let lines = str.split('\n')
+        // get length of longest line:
+    let max_length = Math.max(...lines.map(l => l.length))
+    let border = '*'.repeat(max_length + 4)
+
+    let ret = border + "\n"
+        // make inner lines padded to length:
+    ret += lines.reduce((s, l) => s += `* ${l.padEnd(max_length)} *\n`, "")
+    ret += border
+    return ret
 }
-createTheFrame(feedArray(prompt("how many word in the frame?")))
+
+console.log(frame(str))
