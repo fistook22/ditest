@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
 def index():
-    return "<a href='{{ url_for('lesson') }}'>The lesson</a>\n<a href='{{ url_for('exercise') }}'>The exercise</a>"
+    a = "<a href='{{ 'url_for('lesson')' }}'>The lesson</a>\n<a href='{{ 'url_for('exercise')' }}'>The exercise</a>"
+    return flask.render_template_string(a)
 
 
 @app.route("/")

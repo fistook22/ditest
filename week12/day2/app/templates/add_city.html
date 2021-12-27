@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add your city</title>
+</head>
+<body>
+<form method="POST">
+
+
+{{ form.city_name.label }}
+{{ form.city_name(size=32) }}
+
+{{ form.city_country.label }}
+{{ form.city_country(size=32) }}
+
+{{ form.num_of_inhabit.label }}
+{{ form.num_of_inhabit(size=32) }}
+
+{{ form.city_area.label }}
+{{ form.city_area(size=32) }}
+
+
+
+{{ form.submit() }}
+</form>
+</body>
+</html>

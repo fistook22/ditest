@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My CV</title>
+</head>
+<body>
+    <form method="POST">
+    {{ form.hidden_tag() }}
+
+    {{ form.first_name.label }}
+    {{ form.first_name(size=32) }}
+
+    {{ form.last_country.label }}
+    {{ form.last_country(size=32) }}
+
+    {{ form.age.label }}
+    {{ form.age(size=32) }}
+
+    {{ form.experience.label }}
+    {{ form.experience(size=32) }}
+
+    {{ form.submit() }}
+    </form>
+</body>
+</html>

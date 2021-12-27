@@ -1,3 +1,4 @@
+import flask
 from flask import Flask, url_for
 
 app = Flask(__name__)
@@ -5,17 +6,19 @@ app = Flask(__name__)
 
 # default-page
 @app.route('/')
+@app.route('/home')
 def home():
-    return "<a href={{ url_for('about') }}> About Shai </a>"
+    a = "<a href='{{ url_for('about') }}'> About Shai </a>"
+    return flask.render_template_string(a)
 
 
 # about-page
 @app.route('/about')
 def about():
     html = '''
-<html lang=”en”>
+<html lang="en">
   <head>
-    <meta charset=”UTF-8">
+    <meta charset="UTF-8">
     <title>ABOUT</title>
   </head>
   <body>
