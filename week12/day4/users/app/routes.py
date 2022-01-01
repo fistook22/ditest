@@ -22,6 +22,9 @@ def login():
 		else:
 			flask.flash(f"there is no user with the following name {name}")
 
+	if form.status.data == "admin":
+		return flask.render_template(app.db)
+	else:
 	return flask.render_template('login.html', form=form)
 
 

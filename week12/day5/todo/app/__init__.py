@@ -1,15 +1,13 @@
 import flask
-import flask_sqlalchemy
 import flask_migrate
-import os
+import flask_sqlalchemy
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+from config import Config
 
 app = flask.Flask(__name__)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir, 'app.db')
+app.config.from_object(Config)
 
 db = flask_sqlalchemy.SQLAlchemy(app)
 migrate = flask_migrate.Migrate(app, db)
 
-from config import Config
+from app import routes, models

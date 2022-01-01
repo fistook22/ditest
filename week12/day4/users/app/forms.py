@@ -3,6 +3,10 @@ import wtforms
 
 
 class Login(flask_wtf.FlaskForm):
+	def __init__(self, formdata=_Auto, **kwargs):
+		super().__init__(formdata, kwargs)
+		self.status = None
+
 	name = wtforms.StringField(label="name", validators=[wtforms.validators.DataRequired()])
 	city_name = wtforms.StringField(label="city name", validators=[wtforms.validators.DataRequired()])
 

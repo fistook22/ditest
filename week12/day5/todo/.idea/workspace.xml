@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1f6466eb-bbe2-4b26-bdd1-eff091978b40" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../day2/app1/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/todo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day2/app1/.idea/app1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day2/app1/.idea/app1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day2/app1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day2/app1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day2/app1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day2/app1/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4/users/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4/users/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4/users/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4/users/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4/users/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4/users/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4/users/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4/users/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4/users/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4/users/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/todo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/todo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="233Xxj58wN0P1F75j20GRS0KeED" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../day4/users" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RunManager">
+    <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="todo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/wsgi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.wsgi" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f6466eb-bbe2-4b26-bdd1-eff091978b40" name="Changes" comment="" />
+      <created>1640963997681</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640963997681</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
