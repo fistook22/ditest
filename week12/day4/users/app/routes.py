@@ -1,4 +1,5 @@
 import flask
+from flask_wtf import form
 
 from app import app, db
 from app.forms import Login, Register
@@ -7,49 +8,51 @@ from app.models import User
 
 @app.route('/')
 def main_page():
-	return 'Wellcome to the main page'
+    return "welcome"
 
 
-@app.route('/login', methods=["GET", "POST"])
+@app.route('/login', methods=("GET", "POST"))
 def login():
-	form = Login()
+    form = Login()
 
-	if form.validate_on_submit():
-		name = form.name.data
+    if form.validate_on_submit():
+        name = form.name.data
+        print(name)
 
-		if check_if_user_exist(name):  # if check_if_user_exist(name) == True
-			return flask.redirect('/')
-		else:
-			flask.flash(f"there is no user with the following name {name}")
+        if check_if_user_exist(name):  # if check_if_user_exist(name) == True
+            return flask.redirect('/')
+        else:
+            flask.flash(f"there is no user with the following name {name}")
 
-	if form.status.data == "admin":
-		return flask.render_template(app.db)
-	else:
-	return flask.render_template('login.html', form=form)
+    if form.status.data == "admin":
+        return flask.render_template(app.db)
+    else:
+        return flask.render_template('login.html', form=form)
 
 
-@app.route('/register', methods=["GET", "POST"])
+@app.route('/register', methods=("GET", "POST"))
 def register():
-	form = Register()
+    register = Register()
 
-	if form.validate_on_submit():
-		name = form.name.data
-		city_name = form.city_name.data
+    if form.validate_on_submit():
+        name = form.name.data
+        city_name = form.city_name.data
 
-		user = User(name=name, city_name=city_name)
-		db.session.add(user)
-		db.session.commit()
+        user = User(name=name, city_name=city_name)
+        db.session.add(user)
+        db.session.commit()
 
-		return flask.redirect('/login')
+        return flask.redirect('/login')
 
-	return flask.render_template('register.html', form=form)
+    return flask.render_template('register.html', form=form)
 
 
 def check_if_user_exist(name):
-	# all_users = User.query.all()
-	# for user in all_users:
-	# 	if user.name == name:
-	# 		return True
-	#
-	# return False
-	return User.query.filter_by(name=name).first()
+    # all_usres = User.query.all()
+    # for user in all_usres:
+    #     if user.name == name:
+    #         return True
+    #
+    # return False
+
+    return User.query.filter_by(name == name)

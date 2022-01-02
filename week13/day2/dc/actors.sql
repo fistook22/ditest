@@ -1,0 +1,1 @@
+SELECT actor_id COUNT FROM actors
