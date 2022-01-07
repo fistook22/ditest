@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -13,6 +12,13 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     complete = db.Column(db.Boolean)
+    image = db.relationship('Image', backref='todo', uselist=False)
+
+
+class Image(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    url = db.Column(db.String(64))
+    todo_id = db.Column(db.Integer, db.ForeignKey('todo.id'))
 
 
 @app.route("/")
@@ -24,8 +30,11 @@ def home():
 @app.route("/add", methods=["POST"])
 def add():
     title = request.form.get("title")
+    img = request.form.get("image")
+    new_image = Image(url=img, todo_id=id)
     new_todo = Todo(title=title, complete=False)
     db.session.add(new_todo)
+    db.session.add(new_image)
     db.session.commit()
     return redirect(url_for("home"))
 
