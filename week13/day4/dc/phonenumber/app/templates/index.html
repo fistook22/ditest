@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block my_block %}
+    <h1>The Phone Book</h1>
+    <ul>
+    {% for person in persons %}
+        <li>
+            {{ person.person_id }} , {{ person.phonenumber.number }}
+        </li>
+    {% endfor %}
+    </ul>
+    <a class="btn btn-primary" href="{{ url_for('add_fake_person') }}">Add a Number</a>
+{% endblock %}

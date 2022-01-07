@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+
+{% block my_block %}
+    <a class="btn btn-primary" href="{{ url_for('delete_person', id=person_id) }}">remove person</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block my_block %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.person.label }}
+        {{ form.person(size=32) }}
+        <br>
+        {{ form.phonenumber.label }}
+        {{ form.phonenumber(size=32) }}
+        <br>
+        {{ form.email.label }}
+        {{ form.email(size=32) }}
+        <br>
+        {{ form.address.label }}
+        {{ form.address(size=32) }}
+        <br>
+        <button class="btn btn-primary">
+            {{ form.submit() }}
+        </button>
+
+    </form>
+
+{% endblock %}
