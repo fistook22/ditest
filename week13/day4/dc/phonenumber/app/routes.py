@@ -43,3 +43,7 @@ def add_fake_person():
         db.session.commit()
 
         return f"the person with id {id} deleted successfully"
+
+    @app.route('/people/<nationality>', methods=['GET', 'POST'])
+    def show_people_nationality():
+        return Person.query.filter_by(nationality='israeli').all()
