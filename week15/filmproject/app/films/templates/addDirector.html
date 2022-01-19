@@ -1,0 +1,21 @@
+{% extends 'partials/base.html' %}
+{% include 'partials/navbar.html' %}
+
+{% block my_block %}
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.Name.label }}
+        {{ form.Name(size=32) }}
+        <br>
+        {{ form.Lname.label }}
+        {{ form.Lname(size=32) }}
+        <br>
+        <button class="btn btn-primary">
+            {{ form.submit() }}
+        </button>
+
+    </form>
+
+{% endblock %}
