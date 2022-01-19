@@ -43,3 +43,9 @@ class Director(db.Model):
     director_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     first_name = db.Column(db.String(64))
     last_name = db.Column(db.String(64))
+
+
+class User(db.Model):
+    username = db.Column(db.String(64))
+    password1 = db.Password()
+    password2 = db.Password()

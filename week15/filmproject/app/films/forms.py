@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DateField
+from wtforms import StringField, SubmitField, DateField, PasswordField
 from wtforms.validators import data_required
 
 
@@ -16,3 +16,16 @@ class AddDirectorForm(FlaskForm):
     first_name = StringField('Name', validators=[data_required()])
     last_name = StringField('Lname', validators=[data_required()])
     submit = SubmitField('Add a New Director')
+
+
+class SignUp(FlaskForm):
+    username = StringField('Username', validators=[data_required()])
+    password1 = PasswordField('Password', validators=[data_required()])
+    password2 = PasswordField('Confirm', validators=[data_required()])
+    submit = SubmitField('Register')
+
+
+class Login(FlaskForm):
+    username = StringField('Username', validators=[data_required()])
+    password = PasswordField('Password', validators=[data_required()])
+    submit = SubmitField('Login')
