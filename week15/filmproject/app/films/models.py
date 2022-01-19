@@ -47,5 +47,5 @@ class Director(db.Model):
 
 class User(db.Model):
     username = db.Column(db.String(64))
-    password1 = db.Password()
-    password2 = db.Password()
+    password1 = db.Password(db.Password)
+    password2 = db.Password(db.Password)

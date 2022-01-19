@@ -1,12 +1,12 @@
-from app import app
-from flask import render_template
 import flask
 import flask_login
+
+from flask import render_template
 from flask import url_for
 
-from app import app, db, login_mngr
-from app.forms import Login, Register
-from app.models import User
+from films import app, db
+from films.forms import Login, SignUp
+from films.models import User
 
 
 @app.route('/homepage', methods=['GET', 'POST'])
@@ -51,13 +51,13 @@ def login():
     return flask.render_template('login.html', form=form)
 
 
-@app.route('/register', methods=["GET", "POST"])
-def register():
-    form = Register()
+@app.route('/signup', methods=["GET", "POST"])
+def signup():
+    form = SignUp()
 
     if form.validate_on_submit():
         username = form.username.data
-        password = form.password.data
+        password = form.password1.data
 
         user = User(username=username, password=password)
         db.session.add(user)
@@ -76,5 +76,5 @@ def logout():
 
 @app.route('/my_info')
 @flask_login.login_required
-def my_info():
+def my_info(username):
     return flask.render_template('profile.html', username=username)
