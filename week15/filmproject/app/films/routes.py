@@ -4,9 +4,11 @@ import flask_login
 from flask import render_template
 from flask import url_for
 
-from films import app, db
+from films import app, db, my_blueprint
 from films.forms import Login, SignUp
 from films.models import User
+
+app.register_blueprint(my_blueprint, url_prefix="/films")
 
 
 @app.route('/homepage', methods=['GET', 'POST'])

@@ -1,18 +1,15 @@
 import random
 
-import flask_migrate
-import flask_sqlalchemy
+import flask_login
 from flask import Flask, Blueprint
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = random._urandom(56)
 app.config['DEBUG'] = True
 
 my_blueprint = Blueprint('films', __name__, template_folder='templates', static_folder='static')
-
 
 db_info = {'host': 'localhost',
            'database': 'imdb',
@@ -25,10 +22,10 @@ app.config[
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Database Representation
-db = flask_sqlalchemy.SQLAlchemy(app)
-migrate = flask_migrate.Migrate(app, db)
-
-app.register_blueprint(my_blueprint, url_prefix="/films")
+login_mngr = flask_login.LoginManager(app)
+login_mngr.login_view = 'login'
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 if __name__ == '__main__':
     app.run(debug=True)
