@@ -1,5 +1,4 @@
 import datetime
-
 from app import db
 
 films_in_countries = db.Table('filmandcountry',
@@ -21,21 +20,28 @@ films_and_directors = db.Table('filmanddirector',
 class Country(db.Model):
     country_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(64))
+
     film_made_in = db.Column(db.Integer, db.ForeignKey('film.film_id'))
+    films = db.relationship('Film', backref='country', lazy='dynamic')
 
 
 class Category(db.Model):
     country_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(64))
 
+    films = db.relationship('Film', backref='category', lazy='dynamic')
+
 
 class Film(db.Model):
     film_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.column(db.String(64))
     release_date = db.Column(db.Date(64), default=datetime.date.today())
+
     created_in_countries = db.Column(db.relationship('Country', backref='film', lazy='dynamic'))
     available_in_countries = db.relationship("Country", secondary=films_in_countries)
+
     category = db.relationship("Category", secondary=films_and_categories)
+
     director = db.relationship("Director", secondary=films_and_directors)
 
 
@@ -43,6 +49,8 @@ class Director(db.Model):
     director_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     first_name = db.Column(db.String(64))
     last_name = db.Column(db.String(64))
+
+    films = db.relationship('Film', backref='director', lazy='dynamic')
 
 
 class User(db.Model):

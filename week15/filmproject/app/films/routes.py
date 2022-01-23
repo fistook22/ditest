@@ -8,6 +8,8 @@ from films import app, db, my_blueprint
 from films.forms import Login, SignUp
 from films.models import User
 
+from app.films import login_mngr
+
 app.register_blueprint(my_blueprint, url_prefix="/films")
 
 
