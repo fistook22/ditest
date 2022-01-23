@@ -19,8 +19,9 @@ app.config[
     'SQLALCHEMY_DATABASE_URI'] = f"postgresql://{db_info['user']}:{db_info['psw']}@{db_info['host']}/{db_info['database']}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-
-login_mngr = flask_login.LoginManager(app)
-login_mngr.login_view = 'login'
+# login_mngr = flask_login.LoginManager(app)
+# login_mngr.login_view = 'login'
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
+from webapp import routes

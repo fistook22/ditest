@@ -17,5 +17,5 @@ session.headers.update(headers)
 @app.route('/', methods=['GET'])
 def index():
     response = session.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/map')
-    data = json.loads(response.text)
+    data = json.loads(response.text)['data']
     return render_template('index.html', data=data)
