@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.username.label }}
+        {{ form.username(size=12) }}
+
+        {{ form.password.label }}
+        {{ form.password(size=12) }}
+
+        {{ form.remember_me.label }}
+        {{ form.remember_me() }}
+
+        {{ form.submit() }}
+    </form>
+
+    {% for message in get_flashed_messages() %}
+        <br>
+        {{ message }}
+    {% endfor %}
+
+</body>
+</html>
