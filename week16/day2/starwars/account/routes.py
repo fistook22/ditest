@@ -3,9 +3,9 @@ import flask_login
 from flask import url_for, redirect
 from flask_login import login_user, login_required, logout_user
 
-from account import login_manager, app, db
-from account.models import User
+from account import login_manager, db, account
 from account.forms import Register, Login
+from account.models import User, Profile
 
 
 @login_manager.user_loader
@@ -13,18 +13,37 @@ def load_user(user_id):
     return User.query.filter_by(user_id=user_id).first()
 
 
-@app.route('/index', methods=['GET', 'POST'])
+@account.route('/index', methods=['GET', 'POST'])
 def index():
     return 'May the force be with you'
 
 
-@app.route('/profile', methods=['GET', 'POST'])
+@account.route('/create_profile', methods=['GET', 'POST'])
+@login_required
+def create_profile():
+
+    form = create_profile()
+
+    if form.validate_on_submit():
+        username = form.username.data
+        image = form.image.data
+
+        profile1 = Profile(username=username, image=image)
+        db.session.add(profile1)
+        db.session.commit()
+
+        return flask.redirect(url_for('account.profile'))
+
+    return flask.render_template('create_profile.html', form=form)
+
+
+@account.route('/profile', methods=['GET', 'POST'])
 @login_required
 def profile():
-    return 'Anakin Skywalker'
+    return redirect(url_for('account.profile'))
 
 
-@app.route('/register', methods=["GET", "POST"])
+@account.route('/register', methods=["GET", "POST"])
 def register():
     form = Register()
 
@@ -36,15 +55,15 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        return flask.redirect('/login')
+        return flask.redirect(url_for('account.login'))
 
     return flask.render_template('register.html', form=form)
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@account.route('/login', methods=['GET', 'POST'])
 def login():
     if flask_login.current_user.is_authenticated:
-        return flask.redirect(url_for('profile'))
+        return flask.redirect(url_for('account.profile'))
 
     form = Login()
 
@@ -53,12 +72,12 @@ def login():
         login_user(user, remember=True)
 
         flask.flash('Logged in successfully.')
-        return flask.redirect(url_for('index'))
+        return flask.redirect(url_for('account.index'))
     return flask.render_template('login.html', form=form)
 
 
-@app.route('/logout', methods=['GET', 'POST'])
+@account.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('login'))
+    return redirect(url_for('account.login'))
