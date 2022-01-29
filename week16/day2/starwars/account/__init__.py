@@ -27,7 +27,7 @@ def create_app():
     login_manager.init_app(app)
     migrate.init_app(app, db)
 
-    login_manager.login_view = 'login'
+    login_manager.login_view = 'account.login'
     login_manager.refresh_view = 'accounts.reauthenticate'
     login_manager.needs_refresh_message = (
         u'To protect your account, please reauthenticate to access this page.')

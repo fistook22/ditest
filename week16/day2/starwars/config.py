@@ -1,4 +1,3 @@
-import os
 import random
 
 db_info = {'host': 'localhost',

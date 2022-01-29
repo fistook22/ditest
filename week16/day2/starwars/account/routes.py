@@ -4,7 +4,7 @@ from flask import url_for, redirect
 from flask_login import login_user, login_required, logout_user
 
 from account import login_manager, db, account
-from account.forms import Register, Login
+from account.forms import Register, Login, Profile
 from account.models import User, Profile
 
 
@@ -22,13 +22,13 @@ def index():
 @login_required
 def create_profile():
 
-    form = create_profile()
+    form = Profile()
 
     if form.validate_on_submit():
         username = form.username.data
-        image = form.image.data
+        specie = form.specie.data
 
-        profile1 = Profile(username=username, image=image)
+        profile1 = Profile(username=username, image=specie)
         db.session.add(profile1)
         db.session.commit()
 
@@ -40,11 +40,12 @@ def create_profile():
 @account.route('/profile', methods=['GET', 'POST'])
 @login_required
 def profile():
-    return redirect(url_for('account.profile'))
+    return flask.render_template('account.profile')
 
 
 @account.route('/register', methods=["GET", "POST"])
 def register():
+
     form = Register()
 
     if form.validate_on_submit():
@@ -72,7 +73,7 @@ def login():
         login_user(user, remember=True)
 
         flask.flash('Logged in successfully.')
-        return flask.redirect(url_for('account.index'))
+        return flask.redirect(url_for('account.create_profile'))
     return flask.render_template('login.html', form=form)
 
 

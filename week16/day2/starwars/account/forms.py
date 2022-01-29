@@ -1,28 +1,30 @@
-import flask_wtf
-import wtforms
+from flask_wtf import FlaskForm
+from wtforms import FileField, SubmitField, StringField, BooleanField, SelectField
+from wtforms.validators import DataRequired, Length
 
 
-class Login(flask_wtf.FlaskForm):
-    username = wtforms.StringField(label="username", validators=[wtforms.validators.DataRequired()])
-    password = wtforms.StringField(label="password", validators=[wtforms.validators.DataRequired()])
-    remember_me = wtforms.BooleanField(label="remember me")
+class Login(FlaskForm):
+    username = StringField(label="username", validators=[DataRequired()])
+    password = StringField(label="password", validators=[DataRequired()])
+    remember_me = BooleanField(label="remember me")
 
-    submit = wtforms.SubmitField("Submit")
-
-
-class Register(flask_wtf.FlaskForm):
-    username = wtforms.StringField(label="username", validators=[wtforms.validators.DataRequired()])
-
-    password = wtforms.StringField(label="password", validators=[
-        wtforms.validators.DataRequired(),
-        wtforms.validators.Length(min=6, max=10)])
-
-    submit = wtforms.SubmitField("Submit")
+    submit = SubmitField("Submit")
 
 
-class Profile(flask_wtf.FlaskForm):
-    username = wtforms.StringField(label="username", validators=[wtforms.validators.DataRequired()])
-    specie = wtforms.StringField(label="specie", validators=[wtforms.validators.DataRequired()])
-    image = wtforms.FileField(label='image')
+class Register(FlaskForm):
+    username = StringField(label="username", validators=[DataRequired()])
 
-    submit = wtforms.SubmitField("Submit")
+    password = StringField(label="password", validators=[
+        DataRequired(),
+        Length(min=6, max=10)])
+
+    submit = SubmitField("Submit")
+
+
+class Profile(FlaskForm):
+    username = StringField(label="username", validators=[DataRequired()])
+    specie = SelectField(label="specie", chices=[1, 'Human', 2, 'Droid', 3, 'Wookie', 4, 'Hutt'],
+                         validators=[DataRequired()])
+    image = FileField(label='image')
+
+    submit = SubmitField("Submit")
